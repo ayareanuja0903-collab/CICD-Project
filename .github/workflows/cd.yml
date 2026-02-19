@@ -35,3 +35,4 @@ jobs:
       #     npm start
       # - name:  nohup node /home/ubuntu/actions-runner/_work/nodejs-app-nov-2025/nodejs-app-nov-2025/nodejs-app-artifacts/src/index.js &
       #   run: echo "Node services started successfully"
+      
