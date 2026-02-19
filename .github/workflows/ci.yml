@@ -3,7 +3,7 @@ name: Build the CI job for nodejs application
 on:
   push:
     branches:
-      - main
+      - cicd-test
   pull_request:
     branches:
       - main
