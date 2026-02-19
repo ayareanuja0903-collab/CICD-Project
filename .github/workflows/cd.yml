@@ -8,9 +8,11 @@ on:
 jobs:
   deploy: 
     name: Deploying the nodejs application to ec2 instance as runner in aws ap-south-1
-    runs-on: self-hosted
     needs: build
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: self-hosted
+    
+    
     #matrix:
     #  os: [ubuntu-latest, amazonlinux2]
     steps:
