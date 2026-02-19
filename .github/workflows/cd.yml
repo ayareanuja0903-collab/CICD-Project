@@ -1,4 +1,4 @@
-name: Deploying the nodejs application to ec2 instance as runner in aws ap-south-1
+name: Deploying the nodejs application to ec2 instance as runner in aws us-east-1
 on:
   workflow_run:
     workflows: ["Build the CI job for nodejs application"]
@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy: 
-    name: Deploying the nodejs application to ec2 instance as runner in aws ap-south-1
+    name: Deploying the nodejs application to ec2 instance as runner in aws us-east-1
     needs: build
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: self-hosted
