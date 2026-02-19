@@ -5,9 +5,12 @@ on:
     workflows: ["CI Pipeline"]
     types:
       - completed
+    branches:
+      - cicd-test
 
 jobs:
   deploy:
+    name: CD Deployment
     runs-on: self-hosted
     
     steps:
@@ -17,13 +20,13 @@ jobs:
         run: sudo apt install nodejs npm -y
       - name: list all the files and folder in build directory
         run: ls        
-      - name: download the artifacts from build job 
-        uses: actions/download-artifact@v4
+      - name: download the artifacts from build job
+        uses: dawidd6/action-download-artifact@v3
         with: 
           name: nodejs-app-artifacts
           path: ./nodejs-app-artifacts
-          run-id: ${{ github.event.workflow_run.id }}
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          workflow: ci.yml
+          run_id: ${{ github.event.workflow_run.id }}
       - name: Deployment completed
         run: echo "Deployment completed successfully"
       # - name: start the node services
