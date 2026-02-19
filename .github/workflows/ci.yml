@@ -1,4 +1,4 @@
-name: Build the CI job for nodejs application
+name: CI Pipeline
 
 on:
   push:
@@ -38,4 +38,3 @@ jobs:
 
 
 
-          

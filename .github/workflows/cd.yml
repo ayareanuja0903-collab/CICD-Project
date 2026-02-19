@@ -1,16 +1,15 @@
-name: Deploying the nodejs application to ec2 instance as runner in aws ap-south-1
+name: CD Deployment
+
 on:
   workflow_run:
-    workflows: ["Build the CI job for nodejs application"]
+    workflows: ["CI Pipeline"]
     types:
       - completed
 
 jobs:
-  deploy: 
-    name: Deploying the nodejs application to ec2 instance as runner in aws ap-south-1
+  deploy:
     runs-on: self-hosted
-    #matrix:
-    #  os: [ubuntu-latest, amazonlinux2]
+    
     steps:
       - name: Update the packages 
         run: sudo apt update -y
