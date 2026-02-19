@@ -8,7 +8,6 @@ on:
 jobs:
   deploy: 
     name: Deploying the nodejs application to ec2 instance as runner in aws ap-south-1
-    needs: build
     runs-on: self-hosted
     #matrix:
     #  os: [ubuntu-latest, amazonlinux2]
